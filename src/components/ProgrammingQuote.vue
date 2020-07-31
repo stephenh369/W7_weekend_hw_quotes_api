@@ -1,10 +1,13 @@
 <template>
   <div class="quote-div">
+    <header>
+      <h4>Programming Quotes</h4>
+    </header>
     <p v-if="randomQuote">{{randomQuote.en}}</p>
     <br>
     <div class="flex-div">
         <p class="quote-author" v-if="randomQuote">{{randomQuote.author}}</p>
-        <button class="btn" @click="anotherRandomQuote">Another Quote!</button>
+        <button class="btn" @click="anotherRandomQuote">Generate Quote</button>
     </div>
   </div>
 </template>
@@ -31,6 +34,12 @@ export default {
 </script>
 
 <style>
+    h4 {
+    display: inline-block;
+    text-align: center;
+    color: #D2D4DB;
+    border-bottom: 1px #0353A4 solid;
+  }
     .quote-div {
         background-color: rgb(50,64,93,0.5);
         width: 50%;
