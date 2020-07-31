@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <header>
+      <h2>Random Quotes</h2>
+    </header>
     <programming-quote :programmingQuotes="programmingQuotes"/>
   </div>
 </template>
@@ -31,5 +34,21 @@ export default {
 </script>
 
 <style>
-
+  * {
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+  }
+  
+  header {
+    text-align: center;
+  }
+  header > h2 {
+    display: inline-block;
+    text-align: center;
+    color: #D2D4DB;
+    border-bottom: 3px #0353A4 solid;
+  }
+  body {
+    background-color: #242E42;
+  }
 </style>
