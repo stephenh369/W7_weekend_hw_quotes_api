@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <li v-for="(quote, index) in programmingQuotes" :quote="quote" :key="index">{{quote.en}}</li>
+    <programming-quote :programmingQuotes="programmingQuotes"/>
   </div>
 </template>
 
 <script>
+import ProgrammingQuote from './components/ProgrammingQuote.vue';
 
 export default {
   name: 'App',
@@ -17,7 +18,7 @@ export default {
     this.getProgrammingQuotes();
   },
   components: {
-    
+    'programming-quote' : ProgrammingQuote
   },
   methods: {
     getProgrammingQuotes() {
