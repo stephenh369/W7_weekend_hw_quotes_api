@@ -1,22 +1,30 @@
 <template>
   <div class="quote-div">
-    <p>{{randomQuote.en}}</p>
+    <p v-if="randomQuote">{{randomQuote.en}}</p>
     <br>
     <div class="flex-div">
-        <p class="quote-author">{{randomQuote.author}}</p>
-        <button class="btn">Another Quote!</button>
+        <p class="quote-author" v-if="randomQuote">{{randomQuote.author}}</p>
+        <button class="btn" @click="anotherRandomQuote">Another Quote!</button>
     </div>
   </div>
 </template>
 
 <script>
+import { eventBus } from "@/main.js";
 export default {
     name: 'programming-quote',
-    props: ['programmingQuotes'],
-    computed: {
-        randomQuote() {
-            const array = this.programmingQuotes;
-            return array[Math.floor(Math.random() * array.length)];
+    props: ['programmingQuotes', 'randomProgrammingQuote'],
+    data() {
+        return {
+            randomQuote: []
+        }
+    },
+    mounted() {
+        this.anotherRandomQuote();
+    },
+    methods: {
+        anotherRandomQuote() { 
+            return this.randomQuote = this.programmingQuotes[Math.floor(Math.random() * this.programmingQuotes.length)];
         }
     }
 }

@@ -9,6 +9,7 @@
 
 <script>
 import ProgrammingQuote from './components/ProgrammingQuote.vue';
+import { eventBus } from "@/main.js";
 
 export default {
   name: 'App',
@@ -19,10 +20,12 @@ export default {
   },
   mounted() {
     this.getProgrammingQuotes();
+
   },
   components: {
     'programming-quote' : ProgrammingQuote
   },
+  
   methods: {
     getProgrammingQuotes() {
     fetch('https://programming-quotes-api.herokuapp.com/quotes/lang/en')
