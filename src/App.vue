@@ -27,6 +27,7 @@ export default {
     eventBus.$on('add-favourite', (favourite) => this.favouriteQuotes.push(favourite));
     eventBus.$on('add-custom-quote', (customQuote) => this.customQuotes.push(customQuote));
     eventBus.$on('favourite-removed', (quote) => this.favouriteQuotes.splice(this.favouriteQuotes.indexOf(quote), 1));
+    eventBus.$on('custom-quote-removed', (customQuote) => this.customQuotes.splice(this.customQuotes.indexOf(customQuote), 1));
   },
   components: {
     'programming-quote' : ProgrammingQuote,

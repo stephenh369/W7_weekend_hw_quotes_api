@@ -2,8 +2,9 @@
   <div class="flex-div">
     <li class="quote-author" v-if="quote">{{quote.author}}:</li> 
     <li v-if="quote">{{quote.en}}</li>
-    <li>{{customQuote}}</li>
-    <button class="btn" @click="removeFavourite">Remove</button>
+    <li v-if="customQuote">{{customQuote}}</li>
+    <button class="btn" v-if="quote" @click="removeFavourite">Remove</button>
+    <button class="btn" v-if="customQuote" @click="removeCustom">Remove</button>
   </div>
 </template>
 
@@ -15,6 +16,9 @@ export default {
     methods: {
         removeFavourite: function() {
             eventBus.$emit("favourite-removed", this.quote);
+        },
+        removeCustom: function() {
+            eventBus.$emit("custom-quote-removed", this.customQuote);
         }
     }
 }

@@ -5,7 +5,7 @@
                 <h4>Favourite Quotes</h4>
             </header>
             <quote-input/>
-            <list-item v-for="(quote, index) in favouriteQuotes" :quote="quote" :key="index+Math.random()"/>
+            <list-item v-for="quote in favouriteQuotes" :quote="quote" :key="quote.id"/>
             <list-item v-for="(customQuote, index) in customQuotes" :customQuote="customQuote" :key="index+Math.random()"/>
         </ul>
     </div>
