@@ -4,7 +4,8 @@
 
 <script>
 export default {
-
+    name: 'list-item',
+    props: ['']
 }
 </script>
 

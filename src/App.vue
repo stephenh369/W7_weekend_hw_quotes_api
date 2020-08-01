@@ -4,18 +4,21 @@
       <h2>Random Quotes</h2>
     </header>
     <programming-quote :programmingQuotes="programmingQuotes"/>
+    <favourite-quotes-list/>
   </div>
 </template>
 
 <script>
-import ProgrammingQuote from './components/ProgrammingQuote.vue';
 import { eventBus } from "@/main.js";
+import ProgrammingQuote from './components/ProgrammingQuote.vue';
+import FavouriteQuotesList from './components/FavouriteQuotesList.vue';
 
 export default {
   name: 'App',
   data() {
     return {
-      programmingQuotes: []
+      programmingQuotes: [],
+      favouriteQuotes: []
     }
   },
   mounted() {
@@ -23,7 +26,8 @@ export default {
 
   },
   components: {
-    'programming-quote' : ProgrammingQuote
+    'programming-quote' : ProgrammingQuote,
+    'favourite-quotes-list' : FavouriteQuotesList
   },
   
   methods: {

@@ -7,6 +7,7 @@
     <br>
     <div class="flex-div">
         <p class="quote-author" v-if="randomQuote">{{randomQuote.author}}</p>
+        <button class="btn" >Add To Favourites</button>
         <button class="btn" @click="anotherRandomQuote">Generate Quote</button>
     </div>
   </div>
@@ -62,6 +63,8 @@ export default {
     }
     .btn {
         background-color: #242E42;
+        margin-left: 10px;
+        margin-right: 10px;
         color: #D2D4DB;
         cursor: pointer;
         border: none;
