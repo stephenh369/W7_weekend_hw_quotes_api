@@ -38,12 +38,6 @@ export default {
 </script>
 
 <style>
-    h4 {
-    display: inline-block;
-    text-align: center;
-    color: #D2D4DB;
-    border-bottom: 1px #0353A4 solid;
-  }
     .quote-div {
         background-color: rgb(50,64,93,0.5);
         width: 50%;
@@ -58,24 +52,5 @@ export default {
     .quote-author {
         color: #0466C8;
     }
-    .flex-div {
-        display: flex;
-        height: 50%;
-        align-items: center;
-        justify-content: space-around;
-    }
-    .btn {
-        background-color: #242E42;
-        margin-left: 10px;
-        margin-right: 10px;
-        color: #D2D4DB;
-        cursor: pointer;
-        border: none;
-        border-bottom: 1px #0353A4 solid;
-        border-radius: 5px;
-        padding: 5px;
-    }
-    .btn:hover {
-        color: #0466C8;
-    }
+
 </style>
