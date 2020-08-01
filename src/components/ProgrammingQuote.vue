@@ -16,7 +16,7 @@
 import { eventBus } from "@/main.js";
 export default {
     name: 'programming-quote',
-    props: ['programmingQuotes', 'randomProgrammingQuote'],
+    props: ['programmingQuotes'],
     data() {
         return {
             randomQuote: []
