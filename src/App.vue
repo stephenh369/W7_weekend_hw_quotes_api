@@ -4,7 +4,7 @@
       <h2>Random Quotes</h2>
     </header>
     <programming-quote :programmingQuotes="programmingQuotes"/>
-    <favourite-quotes-list :favouriteQuotes="favouriteQuotes"/>
+    <favourite-quotes-list :favouriteQuotes="favouriteQuotes" :customQuotes="customQuotes"/>
   </div>
 </template>
 
@@ -18,17 +18,19 @@ export default {
   data() {
     return {
       programmingQuotes: [],
-      favouriteQuotes: []
+      favouriteQuotes: [],
+      customQuotes: []
     }
   },
   mounted() {
     this.getProgrammingQuotes();
     eventBus.$on('add-favourite', (favourite) => this.favouriteQuotes.push(favourite));
+    eventBus.$on('add-custom-quote', (customQuote) => this.customQuotes.push(customQuote));
     eventBus.$on('favourite-removed', (quote) => this.favouriteQuotes.splice(this.favouriteQuotes.indexOf(quote), 1));
   },
   components: {
     'programming-quote' : ProgrammingQuote,
-    'favourite-quotes-list' : FavouriteQuotesList
+    'favourite-quotes-list' : FavouriteQuotesList,
   },
   
   methods: {

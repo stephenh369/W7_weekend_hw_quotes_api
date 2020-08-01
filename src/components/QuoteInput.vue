@@ -1,15 +1,30 @@
 <template>
   <div id="quote-input-div">
       <p>Add your own quote!:</p>
-      <input id="fav-quote-input"/>
-      <button class="btn">Add</button>
+      <input id="fav-quote-input" required type="text" ref="input"/>
+      <button class="btn" @click="addCustomQuote($refs.input)">Add</button>
   </div>
 </template>
 
 <script>
 import { eventBus } from "@/main.js";
 export default {
-    name: 'quote-input'
+    name: 'quote-input',
+    data() {
+        return {
+            customQuote: ''
+        }
+    },
+    mounted() {
+    },
+    methods: {
+        addCustomQuote(e) {
+            this.customQuote = e.value
+            e.value = ''
+            eventBus.$emit('add-custom-quote', this.customQuote);
+            return;
+        }
+    }
 }
 </script>
 

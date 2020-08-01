@@ -6,6 +6,7 @@
             </header>
             <quote-input/>
             <list-item v-for="(quote, index) in favouriteQuotes" :quote="quote" :key="index"/>
+            <list-item v-for="(customQuote, index) in customQuotes" :customQuote="customQuote" :key="index"/>
         </ul>
     </div>
 </template>
@@ -16,7 +17,7 @@ import ListItem from './ListItem.vue';
 import QuoteInput from './QuoteInput.vue';
 export default {
     name: 'favourite-quotes-list',
-    props: ['favouriteQuotes'],
+    props: ['favouriteQuotes', 'customQuotes'],
     components: {
         'list-item' : ListItem,
         'quote-input' : QuoteInput
