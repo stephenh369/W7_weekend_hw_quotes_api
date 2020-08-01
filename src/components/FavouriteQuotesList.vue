@@ -4,6 +4,7 @@
             <header id="fav-quotes-header">
                 <h4>Favourite Quotes</h4>
             </header>
+            <quote-input/>
             <list-item v-for="(quote, index) in favouriteQuotes" :quote="quote" :key="index"/>
         </ul>
     </div>
@@ -12,11 +13,13 @@
 <script>
 import { eventBus } from "@/main.js";
 import ListItem from './ListItem.vue';
+import QuoteInput from './QuoteInput.vue';
 export default {
     name: 'favourite-quotes-list',
     props: ['favouriteQuotes'],
     components: {
-        'list-item' : ListItem
+        'list-item' : ListItem,
+        'quote-input' : QuoteInput
     }
 }
 </script>
