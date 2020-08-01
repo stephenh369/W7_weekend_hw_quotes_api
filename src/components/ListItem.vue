@@ -2,14 +2,20 @@
   <div class="flex-div">
     <li class="quote-author">{{quote.author}}:</li> 
     <li>{{quote.en}}</li>
-    <button class="btn">Remove</button>
+    <button class="btn" @click="removeFavourite">Remove</button>
   </div>
 </template>
 
 <script>
+import { eventBus } from "@/main.js";
 export default {
     name: 'list-item',
-    props: ['quote']
+    props: ['quote'],
+    methods: {
+        removeFavourite: function() {
+            eventBus.$emit("favourite-removed", this.quote);
+        }
+    }
 }
 </script>
 
