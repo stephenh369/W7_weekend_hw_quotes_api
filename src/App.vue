@@ -18,12 +18,14 @@ export default {
   data() {
     return {
       programmingQuotes: [],
+      ronSwansonQuotes: [],
       favouriteQuotes: [],
       customQuotes: []
     }
   },
   mounted() {
     this.getProgrammingQuotes();
+    this.getRonSwansonQuotes();
     eventBus.$on('add-favourite', (favourite) => this.favouriteQuotes.push(favourite));
     eventBus.$on('add-custom-quote', (customQuote) => this.customQuotes.push(customQuote));
     eventBus.$on('favourite-removed', (quote) => this.favouriteQuotes.splice(this.favouriteQuotes.indexOf(quote), 1));
@@ -39,6 +41,11 @@ export default {
     fetch('https://programming-quotes-api.herokuapp.com/quotes/lang/en')
     .then(response => response.json())
     .then(data => this.programmingQuotes = data)
+    },
+    getRonSwansonQuotes() {
+    fetch('http://ron-swanson-quotes.herokuapp.com/v2/quotes/110')
+    .then(response => response.json())
+    .then(data => this.ronSwansonQuotes = data)
     }
   }
 }
