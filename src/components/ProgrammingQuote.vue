@@ -7,7 +7,7 @@
     <br>
     <div class="flex-div">
         <p class="quote-author" v-if="randomQuote">{{randomQuote.author}}</p>
-        <button class="btn" >Add To Favourites</button>
+        <button class="btn" @click="addFavourite">Add To Favourites</button>
         <button class="btn" @click="anotherRandomQuote">Generate Quote</button>
     </div>
   </div>
@@ -29,6 +29,9 @@ export default {
     methods: {
         anotherRandomQuote() { 
             return this.randomQuote = this.programmingQuotes[Math.floor(Math.random() * this.programmingQuotes.length)];
+        },
+        addFavourite() {
+            eventBus.$emit('add-favourite', this.randomQuote);
         }
     }
 }

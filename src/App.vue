@@ -4,7 +4,7 @@
       <h2>Random Quotes</h2>
     </header>
     <programming-quote :programmingQuotes="programmingQuotes"/>
-    <favourite-quotes-list/>
+    <favourite-quotes-list :favouriteQuotes="favouriteQuotes"/>
   </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   },
   mounted() {
     this.getProgrammingQuotes();
+    eventBus.$on('add-favourite', (favourite) => this.favouriteQuotes.push(favourite));
 
   },
   components: {
