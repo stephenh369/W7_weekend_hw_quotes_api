@@ -32,6 +32,7 @@ export default {
         },
         addRonFavourite() {
             eventBus.$emit('add-ron-favourite', this.randomRonQuote);
+            alert('Quote added to favourites!');
         }
     }
 }

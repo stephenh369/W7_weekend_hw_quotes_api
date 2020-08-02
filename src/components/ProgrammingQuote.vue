@@ -32,6 +32,7 @@ export default {
         },
         addFavourite() {
             eventBus.$emit('add-favourite', this.randomQuote);
+            alert('Quote added to favourites!');
         }
     }
 }
