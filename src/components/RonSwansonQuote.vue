@@ -1,5 +1,5 @@
 <template>
-    <div class="quote-div">
+    <div id="ron-quote-div" class="quote-div">
         <header>
             <h4>Ron Swanson Quotes</h4>
         </header>
@@ -38,5 +38,7 @@ export default {
 </script>
 
 <style>
-
+    #ron-quote-div {
+        margin-top: 2rem;
+    }
 </style>
