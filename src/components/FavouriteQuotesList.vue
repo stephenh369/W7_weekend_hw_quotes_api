@@ -6,6 +6,7 @@
             </header>
             <quote-input/>
             <list-item v-for="quote in favouriteQuotes" :quote="quote" :key="quote.id"/>
+            <list-item v-for="(ronQuote, index) in favouriteRonQuotes" :ronQuote="ronQuote" :key="index+Math.random()"/>
             <list-item v-for="(customQuote, index) in customQuotes" :customQuote="customQuote" :key="index+Math.random()"/>
         </ul>
     </div>
@@ -17,7 +18,7 @@ import ListItem from './ListItem.vue';
 import QuoteInput from './QuoteInput.vue';
 export default {
     name: 'favourite-quotes-list',
-    props: ['favouriteQuotes', 'customQuotes'],
+    props: ['favouriteQuotes', 'favouriteRonQuotes','customQuotes'],
     components: {
         'list-item' : ListItem,
         'quote-input' : QuoteInput

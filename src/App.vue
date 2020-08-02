@@ -5,7 +5,9 @@
     </header>
     <programming-quote :programmingQuotes="programmingQuotes"/>
     <ron-swanson-quote :ronSwansonQuotes="ronSwansonQuotes"/>
-    <favourite-quotes-list :favouriteQuotes="favouriteQuotes" :customQuotes="customQuotes"/>
+    <favourite-quotes-list :favouriteQuotes="favouriteQuotes"
+    :favouriteRonQuotes="favouriteRonQuotes"
+    :customQuotes="customQuotes"/>
   </div>
 </template>
 
@@ -22,6 +24,7 @@ export default {
       programmingQuotes: [],
       ronSwansonQuotes: [],
       favouriteQuotes: [],
+      favouriteRonQuotes: [],
       customQuotes: []
     }
   },
@@ -29,8 +32,10 @@ export default {
     this.getProgrammingQuotes();
     this.getRonSwansonQuotes();
     eventBus.$on('add-favourite', (favourite) => this.favouriteQuotes.push(favourite));
+    eventBus.$on('add-ron-favourite', (favourite) => this.favouriteRonQuotes.push(favourite));
     eventBus.$on('add-custom-quote', (customQuote) => this.customQuotes.push(customQuote));
     eventBus.$on('favourite-removed', (quote) => this.favouriteQuotes.splice(this.favouriteQuotes.indexOf(quote), 1));
+    eventBus.$on('favourite-ron-removed', (quote) => this.favouriteRonQuotes.splice(this.favouriteRonQuotes.indexOf(quote), 1));
     eventBus.$on('custom-quote-removed', (customQuote) => this.customQuotes.splice(this.customQuotes.indexOf(customQuote), 1));
   },
   components: {
