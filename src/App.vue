@@ -4,6 +4,7 @@
       <h2>Random Quotes</h2>
     </header>
     <programming-quote :programmingQuotes="programmingQuotes"/>
+    <ron-swanson-quote :ronSwansonQuotes="ronSwansonQuotes"/>
     <favourite-quotes-list :favouriteQuotes="favouriteQuotes" :customQuotes="customQuotes"/>
   </div>
 </template>
@@ -11,6 +12,7 @@
 <script>
 import { eventBus } from "@/main.js";
 import ProgrammingQuote from './components/ProgrammingQuote.vue';
+import RonSwansonQuote from './components/RonSwansonQuote.vue';
 import FavouriteQuotesList from './components/FavouriteQuotesList.vue';
 
 export default {
@@ -33,6 +35,7 @@ export default {
   },
   components: {
     'programming-quote' : ProgrammingQuote,
+    'ron-swanson-quote' : RonSwansonQuote,
     'favourite-quotes-list' : FavouriteQuotesList,
   },
   
